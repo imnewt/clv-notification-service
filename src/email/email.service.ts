@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { config } from 'dotenv';
 import * as nodemailer from 'nodemailer';
 
+import { FRONTEND_URL } from 'src/utils/constants';
+
 config();
 
 @Injectable()
@@ -31,7 +33,22 @@ export class EmailService {
       <p>Your temporary password is: <strong>${password}</strong>. For security reasons, we recommend changing your password soon. You can do this by visiting your account settings.</p>
       <p>If you have any questions or need assistance, feel free to contact our support team.</p>
       <p>Best regards,</p>
-      <p>Your Team</p>
+      <p>Truc Mai</p>
+    `,
+    };
+    await this.transporter.sendMail(mailOptions);
+  }
+
+  async sendResetPasswordEmail(email: string, token: string) {
+    const mailOptions = {
+      from: 'trucmaiclv@gmail.com',
+      to: email,
+      subject: 'Changing password request',
+      html: `
+      <p>Please click on this <a href='${FRONTEND_URL}/reset-password?resetToken=${token}'>link</a> to reset your password. For security reasons, this link will be expired within 1 hour.</p>
+      <p>If you have any questions or need assistance, feel free to contact our support team.</p>
+      <p>Best regards,</p>
+      <p>Truc Mai</p>
     `,
     };
     await this.transporter.sendMail(mailOptions);
