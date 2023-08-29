@@ -1,8 +1,11 @@
 import { NestFactory } from '@nestjs/core';
+import { config } from 'dotenv';
 
 import { AppModule } from './app.module';
-import { microserviceConfig } from './configs/microserviceConfig';
-import { NOTIFICATION_SERVICE_PORT } from './utils/constants';
+import { NOTIFICATION_SERVICE_PORT } from './shared/utilities/constants';
+import { microserviceConfig } from './shared/configs/microserviceConfig';
+
+config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
