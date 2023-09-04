@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 
-import { generateWelcomeEmail } from 'src/shared/templates/welcome-email.template';
-import { generateResetPasswordEmail } from 'src/shared/templates/reset-password.template';
+import { generateWelcomeEmail } from '@shared/templates/welcome-email.template';
+import { generateResetPasswordEmail } from '@shared/templates/reset-password.template';
 
 @Injectable()
 export class EmailService {

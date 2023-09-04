@@ -1,12 +1,12 @@
 import { Controller, OnModuleInit } from '@nestjs/common';
 import { Client, ClientKafka, EventPattern } from '@nestjs/microservices';
 
-import { EmailService } from '../../services/email.service';
-import { microserviceConfig } from 'src/shared/configs/microserviceConfig';
+import { EmailService } from '@email/services/email.service';
+import { microserviceConfig } from '@shared/configs/microserviceConfig';
 import {
   SEND_WELCOME_MAIL,
   SEND_RESET_PASSWORD_MAIL,
-} from 'src/shared/utilities/constants';
+} from '@shared/utilities/constants';
 
 @Controller('email')
 export class EmailController implements OnModuleInit {
