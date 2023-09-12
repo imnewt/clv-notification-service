@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { config } from 'dotenv';
 
-import { AppModule } from './app.module';
-import { NOTIFICATION_SERVICE_PORT } from './shared/utilities/constants';
-import { microserviceConfig } from './shared/configs/microserviceConfig';
+import { AppModule } from '@src/app.module';
+import { NOTIFICATION_SERVICE_PORT } from '@shared/utilities/constants';
+import { microserviceConfig } from '@shared/configs/microserviceConfig';
 
 config();
 

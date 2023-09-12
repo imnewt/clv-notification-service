@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 
+import { IMailerTransporter } from '@domain/transporters/mailer.transporter.interface';
 import { generateWelcomeEmail } from '@shared/templates/welcome-email.template';
 import { generateResetPasswordEmail } from '@shared/templates/reset-password.template';
 
 @Injectable()
-export class EmailService {
+export class MailerTransporter implements IMailerTransporter {
   private transporter: nodemailer.Transporter;
 
   constructor() {

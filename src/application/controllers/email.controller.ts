@@ -1,7 +1,7 @@
-import { Controller, OnModuleInit } from '@nestjs/common';
+import { Controller, Inject, OnModuleInit } from '@nestjs/common';
 import { Client, ClientKafka, EventPattern } from '@nestjs/microservices';
 
-import { EmailService } from '@email/services/email.service';
+import { IEmailService } from '@domain/services/email.service.interface';
 import { microserviceConfig } from '@shared/configs/microserviceConfig';
 import {
   SEND_WELCOME_MAIL,
@@ -10,7 +10,9 @@ import {
 
 @Controller('email')
 export class EmailController implements OnModuleInit {
-  constructor(private readonly emailService: EmailService) {}
+  constructor(
+    @Inject(IEmailService) private readonly emailService: IEmailService,
+  ) {}
 
   @Client(microserviceConfig)
   client: ClientKafka;

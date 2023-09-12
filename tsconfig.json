@@ -9,13 +9,22 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@email/*": [
-        "src/modules/email/*"
-      ],
       "@shared/*": [
-        "src/shared/*"
+        "shared/*"
+      ],
+      "@application/*": [
+        "application/*"
+      ],
+      "@domain/*": [
+        "domain/*"
+      ],
+      "@infrastructure/*": [
+        "infrastructure/*"
+      ],
+      "@src/*": [
+        "*"
       ],
     },
     "incremental": true,
