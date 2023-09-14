@@ -1,4 +1,4 @@
-import { generateWelcomeEmail } from '@shared/templates/welcome-email.template';
+import { generateWelcomeEmail } from '@domain/templates/welcome-email.template';
 
 describe('generateWelcomeEmail', () => {
   it('should generate a welcome email with the correct content', () => {

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
-import { IMailerTransporter } from '@domain/transporters/mailer.transporter.interface';
 import { MailerTransporter } from './transporters/mailer.transporter';
+import { IMailerTransporter } from '@domain/transporters/mailer.transporter.interface';
 
 @Module({
   providers: [

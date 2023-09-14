@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 import { AppModule } from '@src/app.module';
-import { NOTIFICATION_SERVICE_PORT } from '@shared/utilities/constants';
+import { NOTIFICATION_SERVICE_PORT } from '@domain/utilities/constants';
 
 describe('AppModule', () => {
   let app: NestExpressApplication;

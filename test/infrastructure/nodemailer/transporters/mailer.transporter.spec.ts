@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { IMailerTransporter } from '@domain/transporters/mailer.transporter.interface';
-import { MailerTransporter } from '@infrastructure/persistence/nodemailer/transporters/mailer.transporter';
-import { FRONTEND_URL } from '@shared/utilities/constants';
+import { FRONTEND_URL } from '@domain/utilities/constants';
+import { MailerTransporter } from '@infrastructure/nodemailer/transporters/mailer.transporter';
 
 jest.mock('nodemailer', () => ({
   createTransport: jest.fn(() => ({

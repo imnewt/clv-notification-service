@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
+import { EmailService } from '@domain/use-cases/email';
 import { IMailerTransporter } from '@domain/transporters/mailer.transporter.interface';
-import { EmailService } from '@domain/implementations/email.service.implementation';
 
 describe('EmailService', () => {
   let emailService: EmailService;

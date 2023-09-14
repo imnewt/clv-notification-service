@@ -1,5 +1,5 @@
-import { generateResetPasswordEmail } from '@shared/templates/reset-password.template';
-import { FRONTEND_URL } from '@shared/utilities/constants';
+import { generateResetPasswordEmail } from '@domain/templates/reset-password.template';
+import { FRONTEND_URL } from '@domain/utilities/constants';
 
 describe('generateResetPasswordEmail', () => {
   it('should generate a reset password email with the correct content', () => {
